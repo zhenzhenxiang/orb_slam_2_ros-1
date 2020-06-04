@@ -156,6 +156,20 @@ target_link_libraries(${PROJECT_NAME}_rgbd
 ${LIBS_ROS}
 )
 
+add_executable (video_publisher
+ros/tool/publish_video.cpp
+)
+target_link_libraries(video_publisher
+${LIBS_ROS}
+)
+
+add_executable (pose_recorder
+ros/tool/record_poses.cpp
+)
+target_link_libraries(pose_recorder
+${LIBS_ROS}
+)
+
 install(TARGETS ${PROJECT_NAME}_mono ${PROJECT_NAME}_stereo ${PROJECT_NAME}_rgbd
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
